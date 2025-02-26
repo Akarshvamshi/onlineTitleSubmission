@@ -6,6 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>Title Verification Result</title>
+    <style>
+        
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            margin:auto;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        #p1 {
+            font-size: 16px;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .status {
+            font-weight: bold;
+            font-size: 18px;
+            color: #007bff;
+        }
+
+        .warning {
+            color: #d9534f;
+            font-weight: bold;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .retry-button {
+            background-color: #dc3545;
+        }
+
+        .retry-button:hover {
+            background-color: #c82333;
+        }
+
+        .confirm-button {
+            background-color: #28a745;
+        }
+
+        .confirm-button:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
 
@@ -34,9 +106,9 @@
 
     <div class="container">
         <h1>Title Verification Result</h1>
-        <p><strong>Status:</strong> {{ status }}</p>
-        <p><strong>Verification Probability:</strong> {{ verification_probability }}%</p>
-        <p><strong>Message:</strong> {{ message }}</p>
+        <p id="p1"><strong>Status:</strong> {{ status }}</p>
+        <p id="p1"><strong>Verification Probability:</strong> {{ verification_probability }}%</p>
+        <p id="p1"><strong>Message:</strong> {{ message }}</p>
 
         {% if warning %}
             <p><strong>Warning:</strong> {{ warning }}</p>
