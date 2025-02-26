@@ -1,0 +1,74 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+html,head,body{
+    font-size: 14px;
+    color:#242424 ;
+    font-family:  sans-serif,Arial, Helvetica, sans-serif;
+    align-content: center;
+    justify-content: center;
+}
+.head{
+    background-image: linear-gradient(150deg, #FF8C00 0%, #F41434 87%);
+    height: 40px;
+}
+.cet{
+    float: right;
+    font-size: 20px;
+    padding: 10px 5px 5px;
+}
+.number{
+    float: left;
+    font-size: 20px;
+    padding: 10px 5px 5px;
+}
+.i2 {
+    height: 150px;
+
+}
+#i2 {
+    text-align: center;
+    line-height: normal;
+    padding: 15px;
+}
+#s1{
+    width: 120px;
+    height: 120px;
+    /*display: inline-block;*/
+    float: left;
+    /* justify-content: space-around;*/
+}
+#s2{
+    height: 120px;
+    width: 120px ;
+    float: right;
+}
+#i3 {
+    background-image: linear-gradient(150deg, #FF8C00 0%, #F41434 87%);
+    height: 40px;
+    align-content: center;
+}
+.p3 {
+    background-image: linear-gradient(150deg, #FF8C00 0%, #F41434 87%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 40px;
+}
+#p2{
+    font-weight: bold;
+    font-size: 20px;
+}
+#h1{
+    text-align: center;
+}
+form{
+    text-align: center;
+}
+#l1{
+   background-image: linear-gradient(150deg, #FF8C00 0%, #F41434 87%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-size: larger;
+}

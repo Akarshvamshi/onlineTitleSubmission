@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Title Verification Result</title>
+</head>
+<body>
+
+    <div class="head">
+        <div class="cet">KCET Code: E-014, COMED-K Code: E-108. PGCET CODE: MBA-B265, M.Tech -T865</div>
+        <div class="number">
+            For Admissions Contact
+            +91 9731292555
+            +91 9901653915
+        </div>
+    </div>
+
+    <div class="i2">
+        <div id="i2">
+            <img id="s1" src="{% static 'images/s1.png' %}" />
+            <img id="s2" src="{% static 'images/s2.png' %}" />
+            <p>|| Jai Sri Gurudev ||</p>
+            <p id="p2">Adichunchanagiri Shikshana Trust(R.)</p>
+            <p class="p3">SJC INSTITUTE OF TECHNOLOGY</p>
+            <p>VTU Affiliated, AICTE Approved, Accredited by NBA(CSE,ISE,ECE,ME,CV,AE) & NAAC with A+ grade, NIRF (151 - 300), Gold rated by QS I-Gauge</p>
+            <p>Chickballapur- 562101, Karnataka, India</p>
+        </div>
+    </div>
+
+    <div id="i3"></div>
+
+    <div class="container">
+        <h1>Title Verification Result</h1>
+        <p><strong>Status:</strong> {{ status }}</p>
+        <p><strong>Verification Probability:</strong> {{ verification_probability }}%</p>
+        <p><strong>Message:</strong> {{ message }}</p>
+
+        {% if warning %}
+            <p><strong>Warning:</strong> {{ warning }}</p>
+        {% endif %}
+
+        {% if status == "rejected" %}
+            <a href="{% url 'homepage' %}">
+                <button class="retry-button">Retry the Submission</button>
+            </a>
+        {% else %}
+            <a href="{% url 'add_title' %}">
+                <button class="confirm-button">Confirm and Add to Database</button>
+            </a>
+            <br>
+            <a href="{% url 'homepage' %}">
+                <button class="submit-button">Submit Another Title</button>
+            </a>
+        {% endif %}
+    </div>
+
+</body>
+</html>

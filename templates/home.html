@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Submit Title Details</title>
+</head>
+<body>
+    
+    
+    <div class="head">
+        <div class="cet">KCET Code: E-014, COMED-K Code: E-108. PGCET CODE: MBA-B265, M.Tech -T865</div>
+        <div class="number">
+            For Admissions Contact
+            +91 9731292555
+            +91 9901653915
+        </div>
+    </div>
+
+    <div class="i2">
+        <div id="i2">
+            <img id="s1" src="static/images/s1.png"/>
+            <img id="s2" src="static/images/s2.png"/>
+            <p>|| Jai Sri Gurudev ||</p>
+            <p id="p2">Adichunchanagiri Shikshana Trust(R.)</p>
+            <p class="p3">SJC INSTITUTE OF TECHNOLOGY</p>
+            <p>VTU Affiliated, AICTE Approved, Accredited by NBA(CSE,ISE,ECE,ME,CV,AE) & NAAC with A+ grade, NIRF (151 - 300), Gold rated by QS I-Gauge</p>
+            <p>Chickballapur- 562101, Karnataka, India</p>
+        </div>
+    </div>
+    
+    <div id="i3"></div>
+    
+    <h1 id="h1">Submit Title Details</h1>
+    <br><br>
+    
+    <form method="POST" action="">
+        {% csrf_token %}
+        <label for="title_name" id="l1">Title Name:</label><br>
+        <input type="text" id="title_name" name="title_name" required><br><br>
+
+        <label for="hindi_title" id="l1">Hindi Title:</label><br>
+        <input type="text" id="hindi_title" name="hindi_title" required><br><br>
+
+        <label for="owner_name" id="l1">Owner Name:</label><br>
+        <input type="text" id="owner_name" name="owner_name" required><br><br>
+
+        <label for="state" id="l1">State:</label><br>
+        <input type="text" id="state" name="state" required><br><br>
+
+        <label for="publication_city_district" id="l1">Publication City/District:</label><br>
+        <input type="text" id="publication_city_district" name="publication_city_district" required><br><br>
+
+        <label for="periodity" id="l1">Periodity:</label><br>
+        <input type="text" id="periodity" name="periodity" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
