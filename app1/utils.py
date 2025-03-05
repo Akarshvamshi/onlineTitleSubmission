@@ -14,6 +14,9 @@ from fuzzywuzzy import process
 from googletrans import Translator
 from typing import Dict, List, Tuple, Set, Optional, Any
 from transformers import MarianMTModel, MarianTokenizer, AutoModelForSeq2SeqLM, AutoTokenizer
+from sentence_transformers import SentenceTransformer
+
+
 
 
 def normalize_text(title: str, stop_words: Set[str]) -> str:
@@ -245,10 +248,12 @@ def contains_disallowed_words(title: str, disallowed_words: Set[str]) -> Set[str
     return disallowed_found
 
 
-def check_similar_titles(title1: str, title2: str, tokenizer, model, threshold=0.8) -> bool:
+def check_similar_titles_meaning(title1: str, title2: str, threshold=0.7) -> bool:
     """Check if two titles are similar using a transformer model."""
-    embedding1 = encode_title(title1, tokenizer, model)
-    embedding2 = encode_title(title2, tokenizer, model)
+    model = SentenceTransformer('all-MiniLM-L6-v2')
+
+    embedding1 = model.encode(title1)
+    embedding2 = model.encode(title2)
     similarity = cosine_similarity([embedding1], [embedding2])
     return similarity[0][0] >= threshold
 
@@ -258,3 +263,4 @@ def encode_title(title: str, tokenizer, model) -> np.ndarray:
     inputs = tokenizer(title, return_tensors="pt", padding=True, truncation=True)
     outputs = model(**inputs)
     return outputs.last_hidden_state.mean(dim=1).squeeze().detach().numpy()
+

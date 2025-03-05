@@ -9,7 +9,7 @@ from .utils import (
     check_prefix_suffix,
     contains_disallowed_words,
     calculate_similarity_percentage,
-    check_similar_titles,
+    check_similar_titles_meaning,
     check_combination_of_existing_titles,
     check_periodicity_modification,
     check_similar_meanings,
@@ -116,6 +116,14 @@ class TitleProcessor:
             is_true = (check_similar_meanings(normalized_title, normalized_existing))
             i = is_true
             if is_true:
+                result.update({
+                    "status": "rejected",
+                    "reason": f"Title has similar meaning to existing title: {existing_title}",
+                    "verification_probability": 0.0
+                })
+                return result
+
+            if check_similar_titles_meaning(normalized_title, normalized_existing):
                 result.update({
                     "status": "rejected",
                     "reason": f"Title has similar meaning to existing title: {existing_title}",

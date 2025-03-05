@@ -7,11 +7,11 @@ def homepage(request):
     if request.method == "POST":
         # Get form data from POST request
         title_name = request.POST.get("title_name")
-        hindi_title = request.POST.get("hindi_title")
+        #hindi_title = request.POST.get("hindi_title")
         owner_name = request.POST.get("owner_name")
         state = request.POST.get("state")
         publication_city_district = request.POST.get("publication_city_district")
-        periodity = request.POST.get("periodity")
+        #periodity = request.POST.get("periodity")
 
 
 
@@ -24,11 +24,11 @@ def homepage(request):
 
         request.session["title_data"] = {
             "title_name": title_name,
-            "hindi_title": hindi_title,
+            #"hindi_title": hindi_title,
             "owner_name": owner_name,
             "state": state,
             "publication_city_district": publication_city_district,
-            "periodity": periodity,
+            #"periodity": periodity,
         }
         # Prepare response
         response_data = {
@@ -62,11 +62,11 @@ def add_title(request):
         # Save the title data into the database
         AcceptedTitle.objects.create(
             title_name=title_data["title_name"],
-            hindi_title=title_data["hindi_title"],
+            #hindi_title=title_data["hindi_title"],
             owner_name=title_data["owner_name"],
             state=title_data["state"],
             publication_city_district=title_data["publication_city_district"],
-            periodity=title_data["periodity"]
+            #periodity=title_data["periodity"]
         )
 
         # Clear the session data after saving
